@@ -2,8 +2,10 @@
 # generate_report.sh - Generates daily summary report
 
 DATE=$(date)
+DATESTAMP=$(date +%Y-%m-%d)
 REPORT_FILE=~/vet-data-pipeline/reports/daily_summary.txt
 LOG_FILE=~/vet-data-pipeline/logs/process_log.txt
+BACKUP_DIR=~/vet-data-pipeline/data/patient_backups
 
 echo "Generating daily report..."
 
@@ -33,6 +35,11 @@ HEALTH STATUS:
 REPORT
 
 echo "Report saved to $REPORT_FILE"
+
+# Backup both patient files
+cp ~/vet-data-pipeline/patients/dogs.csv $BACKUP_DIR/${DATESTAMP}_dogs.csv
+cp ~/vet-data-pipeline/patients/cats.csv $BACKUP_DIR/${DATESTAMP}_cats.csv
+echo "Backups saved to $BACKUP_DIR"
 
 # Log the run
 echo "[$DATE] Report generated. Total=$TOTAL Healthy=$HEALTHY Sick=$SICK Recovering=$RECOVERING" >> $LOG_FILE
