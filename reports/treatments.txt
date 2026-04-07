@@ -1,0 +1,9 @@
+VETERINARY CLINIC - TREATMENT RECORDS
+Date: $(date)
+======================================
+name,species,condition,treatment,vet,date
+Rex,Dog,Recovering,Antibiotics,Dr.Kamau,2026-04-01
+Buddy,Dog,Recovering,Pain Relief,Dr.Auma,2026-04-02
+Luna,Cat,Sick,Deworming,Dr.Kamau,2026-04-03
+Shadow,Cat,Sick,Antibiotics,Dr.Ochieng,2026-04-04
+Bella,Cat,Recovering,Vitamins,Dr.Auma,2026-04-05
